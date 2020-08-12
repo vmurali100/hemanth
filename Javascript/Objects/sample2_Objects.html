@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      var MyCar = {
+        name: "Hyundai Venue",
+        rate: "6.7L",
+        company: "Hundai",
+        varient: "Petrol",
+      }; // Curly Brace refers An Object
+
+      MyCar.milage = "17.52 to 23.4 kmpl"; // Adding Properties with . notation
+      MyCar.engine = "998 to 1493 cc";
+
+      MyCar["Transmission"] = "Manual, Automatic and Semi - Automatic"; // Adding Properties with [] notation
+      MyCar["Seating Capacity"] = 5;
+
+      var results = "";
+
+      for (a in MyCar) {
+        results = results + a + " : " + MyCar[a] + "<br>";
+      }
+
+      document.getElementById("demo").innerHTML = results;
+    </script>
+  </body>
+</html>
