@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showAge()">Show Age</button>
+    <p></p>
+    <script>
+      var age = 50;
+      var myName = "Murali";
+      var indian = true;
+      var data = null;
+
+      var extra = 25;
+
+      document.querySelector("p").innerHTML = age;
+
+      function showAge() {
+        age = age + extra;
+        document.querySelector("p").innerHTML = age;
+      }
+    </script>
+  </body>
+</html>

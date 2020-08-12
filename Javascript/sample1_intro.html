@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button onclick="changeColor()">Change Color</button>
+    <h2>Hello Hemanth .. Welcome to Javascript</h2> -->
+
+    <form>
+      <label for="userName">User Name :</label>
+      <input type="text" name="" id="" /> <br />
+      <label for="pass">Pass word :</label>
+      <input type="text" name="" id="" />
+      <button>Add</button>
+    </form>
+    <script>
+      // 1. JS can Change HTML Elements Style
+      // 2. JS Can Change HTML Content
+      // 3. JS Can create an HTML Elements
+      // 4. Validating User Credentials
+
+      function changeColor() {
+        document.querySelector("h2").style.color = "red";
+        document.querySelector("h2").innerHTML =
+          "Welcome to Front End Development";
+        var para = document.createElement("p");
+        para.innerHTML = "I am inside para";
+        document.body.appendChild(para);
+      }
+    </script>
+  </body>
+</html>
