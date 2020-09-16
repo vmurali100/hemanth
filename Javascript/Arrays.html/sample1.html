@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="carInfo"></div>
+    <script>
+      // If you are giving details related to Single Product , then it is an  Object
+      var carDetails = {
+        carName: "Mahindra XUV500",
+        ExShowroomPrice: "13.2 Lakhs",
+        Seatingcapacity: 7,
+        Fueleconomy: "15 km/l combined",
+        Fueltankcapacity: "70 L",
+        Dimensions: "4,585 mm L x 1,890 mm W x 1,785 mm H",
+      };
+      //   document.getElementById("carInfo").innerHTML =
+      //     "Car Name : " +
+      //     carDetails.carName +
+      //     "<br> Car Ex Showroom Price :" +
+      //     carDetails.ExShowroomPrice +
+      //     "<br> Seating capacity :" +
+      //     carDetails.Seatingcapacity +
+      //     "<br> Seating Fuel economy :" +
+      //     carDetails.Fueleconomy;
+      var results = "";
+      for (a in carDetails) {
+        // console.log(a); // Will display the Property Name
+        // console.log(carDetails[a]); // Will Display the Property value
+        results = results + a + " : " + carDetails[a] + "<br>";
+      }
+
+      document.getElementById("carInfo").innerHTML = results;
+    </script>
+  </body>
+</html>
