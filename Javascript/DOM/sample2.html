@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <select name="" id="myCar" onchange="getSeletedCar()">
+        <option value="Hyundai Venue">Hyundai Venue</option>
+        <option value="Maruthi">Maruthi</option>
+        <option value="Benz">Benz</option>
+        <option value="Ford">Ford</option>
+      </select>
+      <!-- <button type="button" onclick="getSeletedCar()">Get Selected Car</button> -->
+      <button onclick="setCarName()" type="button">Set Car Name</button>
+    </form>
+
+    <script>
+      function getSeletedCar() {
+        var carName = document.getElementById("myCar").value;
+        console.log(carName);
+      }
+
+      function setCarName() {
+        document.getElementById("myCar").value = "Benz";
+      }
+    </script>
+  </body>
+</html>

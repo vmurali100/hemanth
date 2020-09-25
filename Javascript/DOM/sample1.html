@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="" id="myName" />
+      <button onclick="getValue()" type="button">Get Value</button>
+      <button onclick="setValue()" type="button">Set Value</button>
+    </form>
+    <script>
+      function getValue() {
+        var userName = document.getElementById("myName").value;
+        console.log(userName);
+      }
+
+      function setValue() {
+        document.getElementById("myName").value = "Hemanth";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showAllCars()">Show All Cars</button>
+    <br />
+    <button onclick="deleteLastCar()">Delete Last Car</button>
+    <button onclick="deleteFirstCar()">Delete First Car</button>
+    <button onclick="deleteMiddleCar()">Delete Middle Car</button>
+    <hr />
+    <button onclick="addCarAtStart()">Add Car At Start</button>
+    <button onclick="addCarAtLast()">Add Car At Last</button>
+    <button onclick="addCarAtMiddle()">Add Car At Middle</button>
+    <button onclick="getHCars()">Get H Cars</button>
+    <div id="demo"></div>
+    <script>
+      var allCars = [
+        "Audi RS Q8",
+        "Honda Jazz",
+        "Maruti S-Cross",
+        "Ferrari F8 Tributo",
+        "Hyundai Tucson",
+      ];
+      function showAllCars() {
+        var results = "";
+        allCars.forEach(function (car) {
+          results = results + car + "<br>";
+        });
+        document.getElementById("demo").innerHTML = results;
+      }
+
+      function deleteLastCar() {
+        allCars.pop();
+        showAllCars();
+      }
+
+      function deleteFirstCar() {
+        allCars.shift();
+        showAllCars();
+      }
+
+      function deleteMiddleCar() {
+        allCars.splice(2, 1);
+        showAllCars();
+      }
+      function addCarAtStart() {
+        allCars.unshift("Hyundai Tucson");
+        showAllCars();
+      }
+      function addCarAtLast() {
+        allCars.push("MG Hector Plus");
+        showAllCars();
+      }
+      function addCarAtMiddle() {
+        allCars.splice(2, 0, "Toyota Innova Crysta");
+        showAllCars();
+      }
+
+      function getHCars() {
+        var hCars = allCars.filter(function (car) {
+          return car.indexOf("H") == 0;
+        });
+        // document.getElementById("demo").innerHTML = hCars;
+        console.log(hCars);
+        allCars = hCars;
+        showAllCars();
+      }
+    </script>
+  </body>
+</html>
