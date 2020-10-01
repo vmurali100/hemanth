@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="subject">Subjects :</label> <br />
+      <input type="checkbox" name="subject" value="HTML" /> HTML <br />
+      <input type="checkbox" name="subject" value="CSS" /> CSS <br />
+      <input type="checkbox" name="subject" value="Javascript" /> Javascript
+      <br />
+      <input type="checkbox" name="subject" value="ReactJS" /> ReactJS <br />
+      <br />
+      <button onclick="getSubjects()" type="button">Get Subject</button>
+    </form>
+    <hr />
+    <div id="demo"></div>
+    <script>
+      var selectedValues = [];
+      var allCheckBoxes = document.getElementsByName("subject");
+
+      function getSubjects() {
+        selectedValues = [];
+        allCheckBoxes.forEach(function (element) {
+          if (element.checked) {
+            selectedValues.push(element.value);
+          }
+        });
+        displayUsers();
+        resetForm();
+      }
+
+      function displayUsers() {
+        document.getElementById("demo").innerHTML = "";
+        var results = "";
+        selectedValues.forEach(function (val) {
+          results = results + val + "<br>";
+        });
+        document.getElementById("demo").innerHTML = results;
+      }
+
+      function resetForm() {
+        allCheckBoxes.forEach(function (element) {
+          element.checked = false;
+        });
+      }
+    </script>
+  </body>
+</html>
