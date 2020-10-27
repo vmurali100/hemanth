@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="getDataFromLocal()">Get Data</button>
+    <script>
+      function getDataFromLocal() {
+        var info = new XMLHttpRequest(); // TO Communicate with The Server
+        info.onreadystatechange = function () {
+          if (info.readyState == 4 && info.status == 200) {
+            console.log(info.response);
+          }
+        };
+        // info.open("GET", "./ajaxData.json");
+        info.open(
+          "GET",
+          "http://www.filltext.com/?rows=5&id={index}&email={email}&username={username}&password={randomString|5}&pretty=true"
+        );
+        info.send();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Display Array Of Objects</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      var users = [
+        {
+          fname: "Murali",
+          lname: "VMK",
+          email: "murali@gmail.com",
+          city: "bangalore",
+          state: "Karnataka",
+        },
+        {
+          fname: "Krishna",
+          lname: "Ram",
+          email: "krishna@gmail.com",
+          city: "Chittoor",
+          state: "AP",
+        },
+        {
+          fname: "Hemanth",
+          lname: "K",
+          email: "hemanth@gmail.com",
+          city: "Tirupathi",
+          state: "AP",
+        },
+      ];
+
+      var results = "";
+
+      users.forEach(function (user) {
+        for (a in user) {
+          results = results + user[a] + "<br>";
+        }
+        results = results + "<br>";
+        // results =
+        //   results +
+        //   user.fname +
+        //   "<br>" +
+        //   user.lname +
+        //   "<br>" +
+        //   user.email +
+        //   "<br>" +
+        //   user.city +
+        //   "<br><br>";
+      });
+
+      document.getElementById("demo").innerHTML = results;
+    </script>
+  </body>
+</html>

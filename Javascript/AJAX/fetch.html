@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="getData()">Get Data</button>
+    <script>
+      function getData() {
+        var url =
+          "http://www.filltext.com/?rows=5&id={index}&email={email}&username={username}&password={randomString|5}&pretty=true";
+        fetch(url)
+          .then(function (res) {
+            return res.json();
+          })
+          .then(function (response) {
+            console.log(response);
+          });
+      }
+    </script>
+  </body>
+</html>
