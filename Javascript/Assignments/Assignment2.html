@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="" id="" />
+    <button>Search</button>
+    <ul></ul>
+    <script>
+      // 1. Create An Array of 5 State Details
+      // 2. Display 5 State Names
+
+      var states = [
+        {
+          stateName: "Andhra Pradesh",
+          capital: "Amaravathi",
+          localLanguage: "Telugu",
+          population: "5 Crores",
+          image:
+            "https://assets.thehansindia.com/h-upload/2020/01/03/251000-andhra-pradesh.jpg",
+        },
+        {
+          stateName: "Tamil Nadu",
+          capital: "Amaravathi",
+          localLanguage: "Telugu",
+          population: "5 Crores",
+          image:
+            "https://assets.thehansindia.com/h-upload/2020/01/03/251000-andhra-pradesh.jpg",
+        },
+        {
+          stateName: "Karnataka",
+          capital: "Amaravathi",
+          localLanguage: "Telugu",
+          population: "5 Crores",
+          image:
+            "https://assets.thehansindia.com/h-upload/2020/01/03/251000-andhra-pradesh.jpg",
+        },
+        {
+          stateName: "Kerala",
+          capital: "Amaravathi",
+          localLanguage: "Telugu",
+          population: "5 Crores",
+          image:
+            "https://assets.thehansindia.com/h-upload/2020/01/03/251000-andhra-pradesh.jpg",
+        },
+      ];
+
+      states.forEach(function (state) {
+        var myLi = document.createElement("li");
+        myLi.innerHTML = state.stateName;
+        document.querySelector("ul").appendChild(myLi);
+      });
+    </script>
+  </body>
+</html>

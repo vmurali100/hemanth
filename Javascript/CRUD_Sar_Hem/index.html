@@ -4,15 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #updateUserBtn {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <form>
       <label for="fname">First Name :</label>
-      <input type="text" name="fname" id="fname" /><br />
+      <input type="text" name="fname" id="fname" onkeyup="validate()" /><br />
       <label for="lname">Last Name :</label>
-      <input type="text" name="" id="lname" />
-      <button type="button" onclick="createUser()">Create User</button>
-      <button type="button" onclick="updateUser()">Update User</button>
+      <input type="text" name="" id="lname" onkeyup="validate()" />
+      <label for="email">Email : </label>
+      <input type="text" name="" id="email" onkeyup="validate()" />
+      <button type="button" onclick="createUser()" disabled id="createUserBtn">
+        Create User
+      </button>
+      <button type="button" onclick="updateUser()" id="updateUserBtn">
+        Update User
+      </button>
     </form>
     <hr />
     <ul></ul>
@@ -23,5 +34,6 @@
     <script src="./read.js"></script>
     <script src="./update.js"></script>
     <script src="./delete.js"></script>
+    <script src="./validate.js"></script>
   </body>
 </html>
