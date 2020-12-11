@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="fname">First Name : </label>
+      <input type="text" name="" id="fname" onkeyup="checkValue()" />
+      <br />
+      <label for="gender">Gender</label>
+      <input type="radio" name="gender" value="male" />Male
+      <input type="radio" name="gender" value="female" />Female
+      <br />
+
+      <label for="subject">Subjects</label> <br />
+      <input type="checkbox" name="subject" value="html" />HTML <br />
+      <input type="checkbox" name="subject" value="css" />CSS <br />
+      <input type="checkbox" name="subject" value="javascript" />JavaScript
+      <br />
+      <input type="checkbox" name="subject" value="angular" />Angular <br />
+      <input type="checkbox" name="subject" value="react" />React
+      <br />
+
+      <label for="countries">Countries</label><br />
+      <select name="countries" id="countries">
+        <option value="America">America</option>
+        <option value="india">India</option>
+        <option value="newzeland">Newzeland</option>
+        <option value="italy">Italy</option>
+      </select>
+
+      <button type="button" disabled onclick="addUser()">Add User</button>
+    </form>
+    <script>
+      function checkValue() {
+        var fName = document.getElementById("fname").value;
+        if (fName.length >= 6) {
+          document.querySelector("button").removeAttribute("disabled");
+        } else {
+          document.querySelector("button").setAttribute("disabled", true);
+        }
+      }
+
+      function addUser() {
+        var person = {
+          fName: "",
+          gender: "",
+        };
+        person.fName = document.getElementById("fname").value;
+
+        var rButtons = document.getElementsByName("gender");
+        for (i = 0; i < rButtons.length; i++) {
+          if (rButtons[i].checked == true) {
+            person.gender = rButtons[i].value;
+          }
+        }
+
+        var allCheckBoxes = document.getElementsByName("subject");
+        var checkedValues = [];
+        allCheckBoxes.forEach(function (check) {
+          if (check.checked == true) {
+            checkedValues.push(check.value);
+          }
+        });
+        person.subjects = checkedValues;
+
+        person.countries = document.getElementById("countries").value;
+        console.log(person);
+      }
+    </script>
+  </body>
+</html>
