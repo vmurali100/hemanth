@@ -34,7 +34,24 @@
 
       <button type="button" disabled onclick="addUser()">Add User</button>
     </form>
+
+    <table border="1">
+      <thead>
+        <th>First Name</th>
+        <th>Gender</th>
+        <th>Subjects</th>
+        <th>Country</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+    <div id="myDiv"></div>
     <script>
+      var users = [];
+      var rButtons = document.getElementsByName("gender");
+      var allCheckBoxes = document.getElementsByName("subject");
+
       function checkValue() {
         var fName = document.getElementById("fname").value;
         if (fName.length >= 6) {
@@ -46,19 +63,17 @@
 
       function addUser() {
         var person = {
-          fName: "",
+          fname: "",
           gender: "",
         };
-        person.fName = document.getElementById("fname").value;
+        person.fname = document.getElementById("fname").value;
 
-        var rButtons = document.getElementsByName("gender");
         for (i = 0; i < rButtons.length; i++) {
           if (rButtons[i].checked == true) {
             person.gender = rButtons[i].value;
           }
         }
 
-        var allCheckBoxes = document.getElementsByName("subject");
         var checkedValues = [];
         allCheckBoxes.forEach(function (check) {
           if (check.checked == true) {
@@ -68,7 +83,64 @@
         person.subjects = checkedValues;
 
         person.countries = document.getElementById("countries").value;
-        console.log(person);
+        users.push(person);
+        resetValues(person);
+        displayUsersAsTable();
+        // displayNormal();
+      }
+
+      function displayUsersAsTable() {
+        document.getElementById("myTable").innerHTML = "";
+        for (i = 0; i < users.length; i++) {
+          var myTr = document.createElement("tr");
+          for (a in users[i]) {
+            var myTd = document.createElement("td");
+            myTd.innerHTML = users[i][a];
+            myTr.appendChild(myTd);
+          }
+
+          var editTd = document.createElement("td");
+          var editBtn = document.createElement("button");
+          editBtn.innerHTML = "Edit";
+          editTd.appendChild(editBtn);
+          myTr.appendChild(editTd);
+
+          var deleteTd = document.createElement("td");
+          var delteBtn = document.createElement("button");
+          delteBtn.innerHTML = "Delete";
+          deleteTd.appendChild(delteBtn);
+          myTr.appendChild(deleteTd);
+          document.getElementById("myTable").appendChild(myTr);
+        }
+      }
+
+      function displayNormal() {
+        document.getElementById("myDiv").innerHTML = "";
+        var results = "";
+        users.forEach(function (user) {
+          for (a in user) {
+            results = results + user[a] + "<br>";
+          }
+
+          results = results + "<br>";
+        });
+        document.getElementById("myDiv").innerHTML = results;
+      }
+
+      function resetValues(person) {
+        for (a in person) {
+          if (a == "fname" || a == "countries") {
+            document.getElementById(a).value = "";
+          } else if (a == "gender") {
+            rButtons.forEach((rbutton) => {
+              rbutton.checked = false;
+            });
+          } else if (a == "subjects") {
+            allCheckBoxes.forEach(function (checkbox) {
+              checkbox.checked = false;
+            });
+          }
+        }
       }
     </script>
   </body>
