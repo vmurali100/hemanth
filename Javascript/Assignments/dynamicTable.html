@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+
+    <script>
+      var person = {
+        slNo: 1,
+        fname: "Murali",
+        lname: "Krishna",
+        email: "murali@gmail.com",
+        address: "Bangalore",
+      };
+
+      var users = [
+        {
+          fname: "Bonnie",
+          lname: "Wesley",
+          tel: "(443)090-4436",
+          address: "5475 Consectetur Ave",
+          city: "Camas",
+          state: "AK",
+          zip: 66738,
+        },
+        {
+          fname: "Vonnie",
+          lname: "Hoepner",
+          tel: "(267)808-5688",
+          address: "3735 Nunc Ave",
+          city: "Rahway",
+          state: "MT",
+          zip: 60701,
+        },
+        {
+          fname: "Syed",
+          lname: "Leite",
+          tel: "(559)023-8182",
+          address: "8793 Tincidunt Ct",
+          city: "Clovis",
+          state: "WY",
+          zip: 73471,
+        },
+        {
+          fname: "Shirley",
+          lname: "Penty",
+          tel: "(110)091-7691",
+          address: "2912 Massa Ct",
+          city: "Barrington",
+          state: "AL",
+          zip: 61266,
+        },
+        {
+          fname: "Gueorgui",
+          lname: "Tadeu",
+          tel: "(247)017-6297",
+          address: "36 Sapien Ct",
+          city: "Panama City Beach",
+          state: "TN",
+          zip: 48017,
+        },
+        {
+          fname: "Vanessa",
+          lname: "Wullbrandt",
+          tel: "(697)443-1080",
+          address: "4368 Lacus Ct",
+          city: "Grand Forks",
+          state: "OH",
+          zip: 26994,
+        },
+        {
+          fname: "Phillip",
+          lname: "Cullen",
+          tel: "(529)193-5681",
+          address: "4486 Sed Dr",
+          city: "Columbia",
+          state: "VT",
+          zip: 48531,
+        },
+        {
+          fname: "George",
+          lname: "Krasowski",
+          tel: "(822)310-5552",
+          address: "8848 Magna Rd",
+          city: "Piedmont",
+          state: "ME",
+          zip: 66118,
+        },
+        {
+          fname: "Cherise",
+          lname: "Dellabadia",
+          tel: "(100)214-4767",
+          address: "5002 Sollicitudin Ln",
+          city: "Wahiawa",
+          state: "MI",
+          zip: 27512,
+        },
+        {
+          fname: "Audrey",
+          lname: "Bowman",
+          tel: "(716)529-8344",
+          address: "2010 Scelerisque St",
+          city: "Bessemer City",
+          state: "KY",
+          zip: 87403,
+        },
+      ];
+      //   var myTr = document.createElement("tr");
+      //   for (a in users[0]) {
+      //     var myTd = document.createElement("td");
+      //     myTd.innerHTML = users[0][a];
+      //     myTr.appendChild(myTd);
+      //   }
+      //   document.getElementById("myTable").appendChild(myTr);
+
+      for (i = 0; i < users.length; i++) {
+        var myTr = document.createElement("tr");
+        for (a in users[i]) {
+          var myTd = document.createElement("td");
+          myTd.innerHTML = users[i][a];
+          myTr.appendChild(myTd);
+        }
+        document.getElementById("myTable").appendChild(myTr);
+      }
+    </script>
+  </body>
+</html>
