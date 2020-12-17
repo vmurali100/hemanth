@@ -102,18 +102,48 @@
           var editTd = document.createElement("td");
           var editBtn = document.createElement("button");
           editBtn.innerHTML = "Edit";
+          editBtn.setAttribute("onclick", "editUser(" + i + ")");
           editTd.appendChild(editBtn);
           myTr.appendChild(editTd);
 
           var deleteTd = document.createElement("td");
           var delteBtn = document.createElement("button");
           delteBtn.innerHTML = "Delete";
+          delteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
           deleteTd.appendChild(delteBtn);
           myTr.appendChild(deleteTd);
           document.getElementById("myTable").appendChild(myTr);
         }
       }
 
+      function editUser(i) {
+        resetValues(users[i]);
+        var selectedUser = users[i];
+        for (a in selectedUser) {
+          if (a == "fname" || a == "countries") {
+            document.getElementById(a).value = selectedUser[a];
+          } else if (a == "gender") {
+            rButtons.forEach((rbtn) => {
+              if (selectedUser.gender == rbtn.value) {
+                rbtn.checked = true;
+              }
+            });
+          } else {
+            allCheckBoxes.forEach((checkBox) => {
+              selectedUser.subjects.forEach((sub) => {
+                if (checkBox.value == sub) {
+                  checkBox.checked = true;
+                }
+              });
+            });
+          }
+        }
+      }
+
+      function deleteUser(i) {
+        users.splice(i, 1);
+        displayUsersAsTable();
+      }
       function displayNormal() {
         document.getElementById("myDiv").innerHTML = "";
         var results = "";
